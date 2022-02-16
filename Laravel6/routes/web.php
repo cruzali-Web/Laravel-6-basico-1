@@ -11,6 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function() {
+    return 'Home1';
+});
+
+Route::get('/usuarios', function() {
+    return 'Usuarios';
+});
+
+Route::get('/usuarios/{id}', function($id) {
+    return "Detalle user: {$id}";
+})->where('id', '[0-9]+');
+
+Route::get('/usuarios/nuevo', function() {
+    return "Crear nuevo usuario";
+});
+
+Route::get('/saludo/{name}/{nickname?}', function($name, $nickname = null) {
+
+    if ($nickname) {
+        return "Bienvenido {$name}, tu apodo es {$nickname}";
+    } else {
+        return "Bienvenido {$name}, no tienes apodo";
+    }
 });
