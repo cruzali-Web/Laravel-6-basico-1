@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function() {
-    return 'Home';
-});
+Route::get('/', 'HomeController@index');
 
 Route::get('/usuarios', 'UserController@index');
 
@@ -25,4 +23,4 @@ Route::get('/usuarios/{id}/edit', 'UserController@edit')
 
 Route::get('/usuarios/nuevo', 'UserController@create');
 
-Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController@userWithOutNickName');
+Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController@userWithNickName');

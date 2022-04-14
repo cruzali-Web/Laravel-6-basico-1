@@ -22,12 +22,12 @@ class WelcomeUsersTest extends TestCase
      
     }
 
-    /** @test */
-    function it_welcome_users_without_nickname() {
-        $this->get('saludo/ali')
-        ->assertStatus(200)
-        ->assertSee('Bienvenido Ali, no tienes apodo');
+    // /** @test */
+    // function it_welcome_users_without_nickname() {
+    //     $this->get('saludo/ali')
+    //     ->assertStatus(200)
+    //     ->assertSee('Bienvenido Ali, no tienes apodo');
 
-    }
+    // }
 
 }

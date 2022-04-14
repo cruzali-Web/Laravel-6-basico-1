@@ -13,10 +13,10 @@ class WelcomeUserController extends Controller
         return "Bienvenido {$name}, tu apodo es {$nickname}";
     }
 
-    public function userWithOutNickName($name)
-    {
-        $name = ucfirst($name);
+    // public function userWithOutNickName($name)
+    // {
+    //     $name = ucfirst($name);
         
-        return "Bienvenido {$name}, no tienes apodo";
-    }
+    //     return "Bienvenido {$name}, no tienes apodo";
+    // }
 }

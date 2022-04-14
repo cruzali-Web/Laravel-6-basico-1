@@ -8,13 +8,17 @@ class UserController extends Controller
 {
     public function index() 
     {
-        $users = [
-            'Sara', 
-            'Abraham',
-            'Ali',
-            'Tania',
-            'Belen'
-        ];
+        if (request()->has('empty')) {
+            $users = [];
+        } else {
+            $users = [
+                'Sara', 
+                'Abraham',
+                'Ali',
+                'Tania',
+                'Belen'
+            ];
+        }
 
         $title = 'Listado de usuarios';
 
@@ -34,21 +38,23 @@ class UserController extends Controller
 
         //dd(compact('title', 'users'));
         
-        return View('users', compact('title', 'users'));
+        return View('users.index', compact('title', 'users'));
     }
 
     public function show($id)
     {
-        return "Mostrando detalles del usuario {$id}";
+        return View('users/details', compact('id'));
     }
 
     public function create()
     {
-        return "Crear nuevo usuario";
+        $userType = 'Admin';
+
+        return View('users/create', compact('userType'));
     }
 
     public function edit($id)
     {
-        return "El usuario a editar es: {$id}";
+        return View('/users/edit', compact('id'));
     }
 }
