@@ -3,12 +3,12 @@
 
 @section('content')
 
-        <h1>{{ e($title) }} </h1>    
+        <h1>{{ e($title) }} </h1>
 
         <!-- @unless (empty($users))
-        
+
         <ul>
-            @foreach ($users as $user)       
+            @foreach ($users as $user)
                 <li> {{ e($user) }} </li>
             @endforeach
         </ul>
